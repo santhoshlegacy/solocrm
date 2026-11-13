@@ -1,0 +1,576 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#002107","secondary":"#4edea3","surface-variant":"#353437","secondary-container":"#00a572","surface-container":"#201f22","on-secondary-fixed-variant":"#005236","error-container":"#93000a","error":"#ffb4ab","outline":"#849581","background":"#131315","inverse-surface":"#e5e1e4","on-secondary":"#003824","secondary-fixed-dim":"#4edea3","tertiary-container":"#abebd1","on-tertiary-container":"#2e6c57","on-primary":"#003911","surface-tint":"#00e55b","primary":"#edffe8","tertiary":"#ebfff4","primary-container":"#00ff66","surface-bright":"#39393b","surface":"#131315","on-tertiary-fixed-variant":"#0b513d","secondary-fixed":"#6ffbbe","on-tertiary":"#003829","on-surface":"#e5e1e4","on-secondary-container":"#00311f","inverse-primary":"#006e27","on-error":"#690005","tertiary-fixed-dim":"#95d3ba","inverse-on-surface":"#313032","on-tertiary-fixed":"#002117","primary-fixed":"#6bff83","outline-variant":"#3b4b3a","surface-container-low":"#1c1b1e","on-surface-variant":"#b9ccb5","on-error-container":"#ffdad6","on-secondary-fixed":"#002113","on-primary-container":"#007128","primary-fixed-dim":"#00e55b","surface-container-highest":"#353437","on-background":"#e5e1e4","surface-container-lowest":"#0e0e10","surface-container-high":"#2a2a2c","on-primary-fixed-variant":"#00531b","surface-dim":"#131315","tertiary-fixed":"#b0f0d6"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin-desktop":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2.5rem","margin":"1rem","space-lg":"1.5rem","margin-tablet":"1.5rem","space-md":"1rem","gutter":"1.25rem","gutter-desktop":"1.5rem"},fontFamily:{"body-lg":["Inter"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-md":["Inter"],"label-sm":["Inter"],"display-lg":["Plus Jakarta Sans"],"metric-numeral":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.025em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.05em",fontWeight:"500"}],"display-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.03em",fontWeight:"800"}],"metric-numeral":["32px",{lineHeight:"36px",letterSpacing:"-0.03em",fontWeight:"800"}],"display-lg-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"800"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"headline-xl-mobile":["26px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container relative overflow-x-hidden min-h-screen"><div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_15%_10%,rgba(0,255,102,0.06)_0%,transparent_50%),radial-gradient(circle_at_85%_90%,rgba(0,229,91,0.04)_0%,transparent_40%)]"></div><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/60 backdrop-blur-2xl z-50 flex flex-col justify-between p-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-space-xl"><div class="flex items-center gap-space-md px-space-xs"><img alt="SoloCRM Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Dlnv85tUDRrelYhXxH5SSjdPCtrTtiShvfkcnOp4TD33nrmujAevMd1xwLRrXqPc00o6SbSosNsf-Zoy6bBAHvvq_4D_P4l7Txsu8NHVUQZ8qz20v_j8S36cbI1K_IyYJ5PSleFY2h52zU5zeW3fM1XyS3Nbhx4usOVfUrIq6Iw0Qdhu_hwINEAvDduoiGZALoS4fCmLQzs-DGzhWs4k7pCcMldKWXubV_WT"><div class="flex flex-col"><span class="font-headline-md text-headline-md text-primary tracking-tight leading-none">SoloCRM</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-md shadow-[0_0_20px_-3px_rgba(0,255,102,0.45)]"><a class="group flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="group flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="leads" href="#"><span class="material-symbols-outlined text-[20px]">view_kanban</span><span class="font-body-md text-body-md">Leads</span></a><a class="group flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="insights" href="#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span class="font-body-md text-body-md">Insights</span></a><a aria-current="page" class="group flex items-center gap-space-md px-space-md py-space-sm rounded-xl transition-all duration-200 bg-primary-container text-on-primary-container font-headline-md shadow-[0_0_20px_-3px_rgba(0,255,102,0.45)]" data-path="payments" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span class="font-body-md text-body-md">Payments</span></a><a class="group flex items-center gap-space-md px-space-md py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="p-space-sm rounded-xl bg-surface-container/50 backdrop-blur-md flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md overflow-hidden"><div class="relative flex-shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOl-UfpB2sRVCpVdehKriTTMKtl3XqGCaO89IHgVndOl68i-Ax4SZpjR_saLBPmdwO1j3ebs7Qvy3kSFvSuBtkS34cafznEygh-OnF8DicD_AhDDOD-FN6RxqEJgKQkt9t6p7SPDaszpkOGxV9Qs_A22ailt1p4ffAF39_I1cyI98zK32zukw_FaJzHJZ80TmeLboYrY8kmr80pwC7kySmE3UHgKvkdV_DLusY"><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-container rounded-full ring-2 ring-surface-container-lowest animate-pulse"></span></div><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-on-surface truncate">Santhosh</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Sr Designer &amp; Dev</span></div></div><button class="flex items-center justify-center p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">expand_more</span></button></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 z-40 bg-surface-container-lowest/60 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-md"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-[18px] text-on-surface-variant pointer-events-none">search</span><input class="w-full pl-10 pr-space-md py-space-xs rounded-xl bg-surface-container/60 text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container transition-all" placeholder="Quick search leads, invoices, metrics (⌘K)..." type="text"></div></div><div class="flex items-center gap-space-md"><button class="relative p-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_rgba(0,255,102,0.8)]"></span></button><button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-xl bg-primary-container text-on-primary-container font-headline-md text-body-md shadow-[0_0_16px_rgba(0,255,102,0.4)] hover:brightness-110 active:scale-95 transition-all"><span class="material-symbols-outlined text-[18px]">add</span><span>New Invoice / Lead</span></button></div></div></header><main class="relative pt-16 w-full px-space-gutter-desktop min-h-screen"><div class="flex flex-col w-full pb-space-xl">
+<!-- Dynamic Ambient Glow Anchor -->
+<div class="relative w-full">
+<div class="pointer-events-none absolute -top-12 left-1/4 w-96 h-64 bg-primary-container/10 blur-[120px] rounded-full"></div>
+<div class="pointer-events-none absolute top-40 right-10 w-80 h-72 bg-secondary/5 blur-[100px] rounded-full"></div>
+</div>
+<!-- Header Section with Distinct Operator Typography & Dual Actions -->
+<section class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">Payments &amp; Treasury</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Manage encrypted virtual corporate cards, multi-currency client receivables, and autonomous liquidity pipelines.
+      </p>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-space-sm flex-wrap shrink-0">
+<button class="group flex items-center gap-space-xs px-space-md py-space-sm rounded-xl bg-surface-container-high/80 hover:bg-surface-bright text-on-surface font-headline-md text-body-md shadow-sm transition-all hover:scale-[1.02] active:scale-95" id="btn-issue-card">
+<span class="material-symbols-outlined text-[18px] text-secondary group-hover:rotate-90 transition-transform">credit_card</span>
+<span>+ Issue Virtual Card</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-xl bg-primary-container text-on-primary-container font-headline-md text-body-md shadow-[0_0_24px_rgba(0,255,102,0.4)] hover:brightness-110 active:scale-95 transition-all" id="btn-create-invoice">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+<span>Create Invoice</span>
+</button>
+</div>
+</section>
+<!-- Top Section: Asymmetric 1.2 / 0.8 Bento Grid -->
+<section class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-gutter-desktop mb-space-xl">
+<!-- LEFT (col 1-7): 3D Liquid Gloss Virtual Card Hub -->
+<div class="lg:col-span-7 flex flex-col justify-between rounded-xl bg-surface-container-low/70 backdrop-blur-2xl p-space-lg shadow-xl relative overflow-hidden">
+<!-- Top edge glow reflection -->
+<div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-container/30 to-transparent"></div>
+<!-- Card Section Header -->
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="p-space-xs rounded-lg bg-surface-container-highest text-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">contactless</span>
+</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg text-on-surface leading-tight">Solo Platinum Titanium</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Virtual Commercial • Multi-Currency</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span>Apple Pay Active</span>
+</div>
+</div>
+<!-- Realistic 3D Liquid Gloss Card Artifact -->
+<div class="relative w-full max-w-md mx-auto aspect-[1.586/1] rounded-2xl p-space-lg flex flex-col justify-between overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8),inset_0_1px_2px_rgba(255,255,255,0.25)] bg-gradient-to-br from-surface-bright via-surface-container-low to-surface-container-lowest transition-transform hover:scale-[1.01] duration-300">
+<!-- Emerald Prismatic Hologram Layer -->
+<div class="pointer-events-none absolute -inset-full bg-[radial-gradient(circle_at_30%_20%,rgba(0,255,102,0.18)_0%,transparent_40%),radial-gradient(circle_at_80%_80%,rgba(78,222,163,0.15)_0%,transparent_45%)] mix-blend-screen"></div>
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 opacity-70"></div>
+<div class="pointer-events-none absolute bottom-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl"></div>
+<!-- Card Top Bar: EMV Chip & Contactless & Brand -->
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<!-- Realistic Metallic EMV Microchip -->
+<div class="relative w-11 h-8 rounded-md bg-gradient-to-br from-amber-200 via-amber-300 to-amber-500 shadow-inner flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 grid grid-cols-2 grid-rows-2 opacity-40">
+<span class="border-r border-b border-black/50"></span>
+<span class="border-b border-black/50"></span>
+<span class="border-r border-black/50"></span>
+<span></span>
+</div>
+<div class="w-5 h-4 rounded-sm border border-amber-800/40"></div>
+</div>
+<!-- Contactless Icon -->
+<span class="material-symbols-outlined text-on-surface-variant text-[22px] rotate-90 opacity-80">wifi</span>
+</div>
+<!-- Platinum Logo Monogram -->
+<div class="flex items-center gap-space-xs text-right">
+<span class="font-headline-md text-headline-md tracking-tighter text-primary font-black italic">SOLO</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed bg-surface-container-high/60 px-space-xs py-0.5 rounded">Black</span>
+</div>
+</div>
+<!-- Card Middle: Encrypted PAN Number -->
+<div class="relative z-10 my-auto pt-space-xs">
+<div class="flex items-center justify-between gap-space-sm font-headline-md text-headline-md tracking-widest text-primary selection:bg-none">
+<span class="tracking-widest">••••</span>
+<span class="tracking-widest">••••</span>
+<span class="tracking-widest">••••</span>
+<span class="text-primary-fixed font-bold tracking-wider" id="pan-last-four">8842</span>
+</div>
+</div>
+<!-- Card Bottom Bar: Details & Visa Platinum Stamp -->
+<div class="relative z-10 flex items-end justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cardholder</span>
+<span class="font-headline-md text-body-md text-on-surface tracking-wide uppercase font-semibold">Santhosh Kumar</span>
+</div>
+<div class="flex items-center gap-space-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Expires</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">08/28</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">CVV</span>
+<span class="font-body-md text-body-md text-primary-fixed font-semibold" id="cvv-text">•••</span>
+</div>
+<div class="pl-space-xs flex flex-col items-end">
+<span class="font-headline-md text-body-lg font-black tracking-tighter text-primary italic leading-none">VISA</span>
+<span class="font-label-sm text-[9px] uppercase tracking-widest text-on-surface-variant">Platinum</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Card Action Ribbon -->
+<div class="mt-space-lg grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+<button class="flex flex-col items-center justify-center gap-space-xs p-space-sm rounded-xl bg-surface-container/60 hover:bg-surface-container-high transition-all text-on-surface group" id="toggle-freeze-btn">
+<span class="material-symbols-outlined text-[20px] text-secondary group-hover:scale-110 transition-transform">lock</span>
+<span class="font-label-md text-label-md text-center">Freeze Card</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-space-xs p-space-sm rounded-xl bg-surface-container/60 hover:bg-surface-container-high transition-all text-on-surface group" id="toggle-cvv-btn">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed group-hover:scale-110 transition-transform">visibility</span>
+<span class="font-label-md text-label-md text-center">Show Details</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-space-xs p-space-sm rounded-xl bg-surface-container/60 hover:bg-surface-container-high transition-all text-on-surface group">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary-fixed transition-colors">tune</span>
+<span class="font-label-md text-label-md text-center">Limit: $10,000</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-space-xs p-space-sm rounded-xl bg-surface-container/60 hover:bg-surface-container-high transition-all text-on-surface group">
+<span class="material-symbols-outlined text-[20px] text-secondary group-hover:text-primary-container transition-colors">phone_iphone</span>
+<span class="font-label-md text-label-md text-center">Apple Wallet</span>
+</button>
+</div>
+</div>
+<!-- RIGHT (col 8-12): Multi-Rail Liquidity Vault & Fast Payouts -->
+<div class="lg:col-span-5 flex flex-col justify-between rounded-xl bg-surface-container-low/70 backdrop-blur-2xl p-space-lg shadow-xl relative overflow-hidden">
+<!-- Glow rim -->
+<div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent"></div>
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Consolidated Liquidity</span>
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">$48,270.00</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-fixed bg-surface-container px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+            +18.4% mo/mo
+          </span>
+</div>
+<!-- Account Balances Stack -->
+<div class="flex flex-col gap-space-sm">
+<!-- Balance 1: Stripe USD -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container/60 hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-fixed group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Primary Stripe Treasury</span>
+<span class="font-label-sm text-[10px] text-primary-fixed bg-primary-container/10 px-1.5 py-0.2 rounded font-bold">USD</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Routing ••9142 • Live Clearing</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-body-lg text-primary font-bold">$34,820.00</div>
+<span class="font-label-sm text-[11px] text-secondary">Instant settlement ready</span>
+</div>
+</div>
+<!-- Balance 2: Wise EUR -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container/60 hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Wise Multi-Currency</span>
+<span class="font-label-sm text-[10px] text-secondary bg-secondary/10 px-1.5 py-0.2 rounded font-bold">EUR</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">IBAN ••BE44 • SEPA Instant</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-body-lg text-primary font-bold">€8,450.00</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant">≈ $9,210.00 USD</span>
+</div>
+</div>
+<!-- Balance 3: Crypto USDC -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container/60 hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">currency_bitcoin</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Crypto USDC Safe</span>
+<span class="font-label-sm text-[10px] text-tertiary bg-tertiary/10 px-1.5 py-0.2 rounded font-bold">ERC-20</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0x4F...77C9 • Multi-Sig 2/3</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-body-lg text-primary font-bold">5,000.00 <span class="text-on-surface-variant font-normal text-body-md">USDC</span></div>
+<span class="font-label-sm text-[11px] text-secondary font-medium">Yield: 4.8% APY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Transfer & Instant Payout Bar -->
+<div class="mt-space-md pt-space-md flex items-center gap-space-sm">
+<button class="flex-1 flex items-center justify-center gap-space-xs py-space-sm px-space-md rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-headline-md text-body-md transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+<span>Transfer Funds</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-space-xs py-space-sm px-space-md rounded-xl bg-secondary-container hover:brightness-110 text-on-secondary font-headline-md text-body-md transition-all active:scale-95 shadow-[0_0_16px_rgba(0,165,114,0.3)]">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Instant Payout</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Section: High-Fidelity Invoices & Client Ledger -->
+<section class="relative z-10 flex flex-col rounded-xl bg-surface-container-low/70 backdrop-blur-2xl p-space-lg shadow-xl overflow-hidden">
+<!-- Top edge glow reflection -->
+<div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-container/20 to-transparent"></div>
+<!-- Ledger Header & Filter Navigation Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">receipt_long</span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Invoice Receivables</h2>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center bg-surface-container p-1 rounded-xl">
+<button class="invoice-tab px-space-md py-1 rounded-lg font-headline-md text-label-md bg-surface-bright text-primary-fixed shadow-sm transition-all" data-tab="all">
+            All Invoices <span class="ml-1 opacity-70">28</span>
+</button>
+<button class="invoice-tab px-space-md py-1 rounded-lg font-headline-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-tab="pending">
+            Pending <span class="ml-1 text-amber-300 font-bold">3</span>
+</button>
+<button class="invoice-tab px-space-md py-1 rounded-lg font-headline-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-tab="paid">
+            Paid <span class="ml-1 text-primary-fixed">24</span>
+</button>
+<button class="invoice-tab px-space-md py-1 rounded-lg font-headline-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" data-tab="scheduled">
+            Scheduled <span class="ml-1 opacity-60">1</span>
+</button>
+</div>
+</div>
+<!-- Quick Search & Export Utility -->
+<div class="flex items-center gap-space-sm">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left- space-xs text-[18px] text-on-surface-variant pointer-events-none pl-2">filter_alt</span>
+<input class="pl-8 pr-space-md py-1.5 rounded-lg bg-surface-container/60 text-on-surface placeholder:text-outline font-body-md text-label-md focus:outline-none focus:ring-1 focus:ring-primary-container" placeholder="Filter client, ID, scope..." type="text">
+</div>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Export CSV / Quickbooks">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Responsive Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider bg-surface-container/30">
+<th class="py-space-sm px-space-md rounded-l-lg">Invoice ID</th>
+<th class="py-space-sm px-space-md">Client / Organization</th>
+<th class="py-space-sm px-space-md">Project Scope</th>
+<th class="py-space-sm px-space-md">Due Date</th>
+<th class="py-space-sm px-space-md">Amount</th>
+<th class="py-space-sm px-space-md">Status</th>
+<th class="py-space-sm px-space-md text-right rounded-r-lg">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- ROW 1: INV-2024-089 (Apex Labs - Paid) -->
+<tr class="group hover:bg-surface-container/40 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs font-headline-md text-body-md text-primary font-mono font-semibold">
+<span>INV-2024-089</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-primary transition-opacity" title="Copy ID">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-bright flex items-center justify-center font-headline-md text-label-sm text-primary font-bold">
+                  AL
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Apex Labs</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">apexlabs.crypto</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              Milestone 2: Design System
+            </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span>Nov 15, 2024</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-body-lg text-primary font-bold font-mono">$5,250.00</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container/10 text-primary-fixed font-label-md text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_rgba(0,255,102,0.9)]"></span>
+                Paid
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">receipt</span>
+<span>Receipt</span>
+</button>
+</td>
+</tr>
+<!-- ROW 2: INV-2024-090 (Nexus Protocol - Pending) -->
+<tr class="group hover:bg-surface-container/40 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs font-headline-md text-body-md text-primary font-mono font-semibold">
+<span>INV-2024-090</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-primary transition-opacity" title="Copy ID">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-bright flex items-center justify-center font-headline-md text-label-sm text-secondary font-bold">
+                  NP
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Nexus Protocol</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">nexus.network</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              Deposit: Web App Architecture
+            </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 font-body-md text-body-md text-amber-200">
+<span class="material-symbols-outlined text-[16px] text-amber-300">hourglass_top</span>
+<span>Nov 24, 2024</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-body-lg text-primary font-bold font-mono">$7,000.00</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-amber-500/10 text-amber-300 font-label-md text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                Pending
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px] text-amber-300">outgoing_mail</span>
+<span>Send Reminder</span>
+</button>
+</td>
+</tr>
+<!-- ROW 3: INV-2024-091 (Veloce AI - Pending) -->
+<tr class="group hover:bg-surface-container/40 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs font-headline-md text-body-md text-primary font-mono font-semibold">
+<span>INV-2024-091</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-primary transition-opacity" title="Copy ID">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-bright flex items-center justify-center font-headline-md text-label-sm text-tertiary font-bold">
+                  VA
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Veloce AI</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">veloce-model.ai</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              Sprint 1: Prototype
+            </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span>
+<span>Dec 02, 2024</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-body-lg text-primary font-bold font-mono">$4,750.00</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-amber-500/10 text-amber-300 font-label-md text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                Pending
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px] text-amber-300">outgoing_mail</span>
+<span>Send Reminder</span>
+</button>
+</td>
+</tr>
+<!-- ROW 4: INV-2024-088 (Hyperion Cloud - Paid) -->
+<tr class="group hover:bg-surface-container/40 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs font-headline-md text-body-md text-primary font-mono font-semibold">
+<span>INV-2024-088</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-primary transition-opacity" title="Copy ID">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-bright flex items-center justify-center font-headline-md text-label-sm text-primary font-bold">
+                  HC
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">Hyperion Cloud</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">hyperion.systems</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              Monthly Retainer - Oct
+            </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span>Oct 30, 2024</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-body-lg text-primary font-bold font-mono">$8,500.00</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container/10 text-primary-fixed font-label-md text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_rgba(0,255,102,0.9)]"></span>
+                Paid
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">receipt</span>
+<span>Receipt</span>
+</button>
+</td>
+</tr>
+<!-- ROW 5: INV-2024-087 (StudioMono - Paid) -->
+<tr class="group hover:bg-surface-container/40 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-xs font-headline-md text-body-md text-primary font-mono font-semibold">
+<span>INV-2024-087</span>
+<button class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-primary transition-opacity" title="Copy ID">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-surface-bright flex items-center justify-center font-headline-md text-label-sm text-secondary font-bold">
+                  SM
+                </div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-md text-on-surface font-semibold">StudioMono</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">studiomono.io</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              Brand Identity Complete
+            </td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-1 font-body-md text-body-md text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span>
+<span>Oct 18, 2024</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="font-headline-md text-body-lg text-primary font-bold font-mono">$6,000.00</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-container/10 text-primary-fixed font-label-md text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shadow-[0_0_6px_rgba(0,255,102,0.9)]"></span>
+                Paid
+              </span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">receipt</span>
+<span>Receipt</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Telemetry Bar -->
+<div class="mt-space-md pt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-md">
+<span>Showing 5 of 28 transactions</span>
+<span>•</span>
+
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">Previous</button>
+<button class="px-space-sm py-1 rounded bg-primary-container text-on-primary-container font-bold">1</button>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">2</button>
+<button class="px-space-sm py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Micro-Interactions -->
+<script>
+    (function initPaymentControls() {
+      const toggleCvvBtn = document.getElementById('toggle-cvv-btn');
+      const cvvText = document.getElementById('cvv-text');
+      const freezeBtn = document.getElementById('toggle-freeze-btn');
+      const cardLastFour = document.getElementById('pan-last-four');
+      let isRevealed = false;
+      let isFrozen = false;
+
+      if (toggleCvvBtn && cvvText) {
+        toggleCvvBtn.addEventListener('click', () => {
+          isRevealed = !isRevealed;
+          cvvText.textContent = isRevealed ? '491' : '•••';
+          const icon = toggleCvvBtn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            icon.textContent = isRevealed ? 'visibility_off' : 'visibility';
+          }
+        });
+      }
+
+      if (freezeBtn && cardLastFour) {
+        freezeBtn.addEventListener('click', () => {
+          isFrozen = !isFrozen;
+          const icon = freezeBtn.querySelector('.material-symbols-outlined');
+          const label = freezeBtn.querySelector('span:last-child');
+          if (isFrozen) {
+            freezeBtn.classList.add('bg-error-container', 'text-on-error-container');
+            if (icon) icon.textContent = 'lock_open';
+            if (label) label.textContent = 'Unfreeze Card';
+            cardLastFour.classList.add('opacity-40');
+          } else {
+            freezeBtn.classList.remove('bg-error-container', 'text-on-error-container');
+            if (icon) icon.textContent = 'lock';
+            if (label) label.textContent = 'Freeze Card';
+            cardLastFour.classList.remove('opacity-40');
+          }
+        });
+      }
+
+      // Tab switcher micro-logic
+      const tabs = document.querySelectorAll('.invoice-tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-surface-bright', 'text-primary-fixed', 'shadow-sm');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-surface-bright', 'text-primary-fixed', 'shadow-sm');
+          tab.classList.remove('text-on-surface-variant');
+        });
+      });
+    })();
+  </script>
+</div></main></div>
+
+</body></html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ffb4ab", "on-tertiary-fixed-variant": "#0b513d", "on-tertiary-container": "#2e6c57", "primary-fixed": "#6bff83", "secondary": "#4edea3", "surface-container": "#201f22", "background": "#131315", "tertiary-container": "#abebd1", "secondary-container": "#00a572", "tertiary": "#ebfff4", "secondary-fixed-dim": "#4edea3", "primary-fixed-dim": "#00e55b", "primary-container": "#00ff66", "on-surface-variant": "#b9ccb5", "surface": "#131315", "on-tertiary": "#003829", "tertiary-fixed-dim": "#95d3ba", "on-background": "#e5e1e4", "on-primary-fixed": "#002107", "surface-container-high": "#2a2a2c", "on-secondary-container": "#00311f", "on-primary-fixed-variant": "#00531b", "surface-container-low": "#1c1b1e", "tertiary-fixed": "#b0f0d6", "on-primary-container": "#007128", "on-secondary-fixed": "#002113", "outline-variant": "#3b4b3a", "on-surface": "#e5e1e4", "on-error": "#690005", "surface-variant": "#353437", "primary": "#edffe8", "surface-container-lowest": "#0e0e10", "surface-bright": "#39393b", "inverse-on-surface": "#313032", "on-tertiary-fixed": "#002117", "secondary-fixed": "#6ffbbe", "on-secondary": "#003824", "on-error-container": "#ffdad6", "error-container": "#93000a", "on-secondary-fixed-variant": "#005236", "surface-container-highest": "#353437", "inverse-surface": "#e5e1e4", "surface-tint": "#00e55b", "surface-dim": "#131315", "outline": "#849581", "inverse-primary": "#006e27", "on-primary": "#003911" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-lg": "1.5rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-xl": "2.5rem", "margin-tablet": "1.5rem", "margin": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-sm": ["Inter"], "metric-numeral": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-xl-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }], "metric-numeral": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center shadow-[0_0_12px_rgba(0,255,102,0.3)]"><span class="material-symbols-outlined text-primary-container text-[20px]">bolt</span></div><div class="flex flex-col"><span class="font-headline-md text-body-md font-bold tracking-tight text-on-surface">Solo<span class="text-primary-container">CRM</span></span><span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-widest leading-none">Settings</span></div></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-full transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00ff66]"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface px-margin min-h-screen"><div class="flex flex-col w-full pb-6 space-y-4">
+<!-- Subtle Ambient Glow -->
+<div class="fixed top-12 left-1/2 -translate-x-1/2 w-72 h-36 bg-primary-container/5 blur-3xl pointer-events-none rounded-full"></div>
+<!-- Page Control Header (No Duplicated Big H1) -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00ff66]"></span>
+<span class="font-headline-md text-headline-md text-on-surface">Settings Console</span>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md active:scale-95 transition-all shadow-[0_0_12px_rgba(0,255,102,0.3)] hover:shadow-[0_0_16px_rgba(0,255,102,0.5)]" id="quick-save-btn">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save</span>
+</button>
+</div>
+<!-- Horizontal Sub-Tabs Pill Scroll -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shadow-[0_0_10px_rgba(0,255,102,0.25)] flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">badge</span>
+<span>Profile</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">receipt_long</span>
+<span>Invoicing</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">notifications_active</span>
+<span>Notifications</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">hub</span>
+<span>Integrations</span>
+</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span>Security</span>
+</button>
+</div>
+<!-- Freelancer Identity Glass Card -->
+<section class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-md shadow-[0_4px_24px_rgba(0,0,0,0.5)] flex flex-col gap-space-md relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-primary-container/5 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Avatar Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<div class="w-16 h-16 rounded-xl overflow-hidden bg-surface-container-high flex items-center justify-center shadow-[0_0_12px_rgba(0,255,102,0.15)]">
+<img class="w-full h-full object-cover" data-alt="Futuristic cyber minimalist close-up profile portrait of an elite digital consultant, warm rim neon green light, dark obsidian metallic background, editorial tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCZQGf2V_Oaw-buiRky3TPyODyM8v_8EanB897dYXifJDX4VUfTduzqmHjEXz6_o-l98qYnIcZnn71o9rgZ93Inrt-FgDPVt8LQpnjRkp66V-8aCHFyR9fz9dMZJiKRIjl3hyw6Mjn_pr8zs_uNIhSsRpbcLc875evqN6H9kxzk5u1UlSLWPVuwYP9LoHDjU1j1LNaCbxPvqxkk4-6ASWYI-G45lIcuCX1tLRh"/>
+</div>
+<div class="absolute -bottom-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full bg-surface-container-lowest shadow-[0_0_6px_rgba(0,0,0,0.8)]">
+<span class="material-symbols-outlined text-primary-container text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-md text-body-lg font-bold text-on-surface">Santhosh Kumar</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/15 text-primary-container font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-primary-container animate-pulse"></span>
+              Verified
+            </span>
+</div>
+<span class="font-body-md text-label-md text-on-surface-variant">Solo Operator Tier IV</span>
+</div>
+</div>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[15px]">photo_camera</span>
+<span>Edit</span>
+</button>
+</div>
+<!-- Compact Form Grid -->
+<div class="flex flex-col gap-space-sm pt-1">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Full Legal Name</label>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low focus-within:bg-surface-container focus-within:shadow-[0_0_0_1px_#00ff66,0_0_12px_rgba(0,255,102,0.15)] transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">person</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="Santhosh Kumar"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Professional Title</label>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low focus-within:bg-surface-container focus-within:shadow-[0_0_0_1px_#00ff66,0_0_12px_rgba(0,255,102,0.15)] transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">terminal</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="Senior UI/UX Designer &amp; Dev"/>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Entity Name</label>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low focus-within:bg-surface-container focus-within:shadow-[0_0_0_1px_#00ff66,0_0_12px_rgba(0,255,102,0.15)] transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">corporate_fare</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="SoloStudio Creative LLC"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Operating Email</label>
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low focus-within:bg-surface-container focus-within:shadow-[0_0_0_1px_#00ff66,0_0_12px_rgba(0,255,102,0.15)] transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">alternate_email</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="email" value="santhosh@solocrm.design"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Primary Timezone</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low focus-within:bg-surface-container">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">schedule</span>
+<span class="text-on-surface font-body-md text-body-md truncate">Pacific Time (UTC-8)</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Bio / Global Invoice Footer -->
+<div class="flex flex-col gap-1 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Global Invoice Footer Memo</label>
+<span class="font-label-sm text-[10px] text-primary-container">Synced to PDF engine</span>
+</div>
+<textarea class="w-full px-3 py-2 rounded-lg bg-surface-container-low focus:bg-surface-container focus:outline-none focus:shadow-[0_0_0_1px_#00ff66,0_0_12px_rgba(0,255,102,0.15)] text-on-surface font-body-md text-body-md resize-none transition-all" rows="2">Direct wire routing enabled. Thank you for your partnership. Prompt settlement unlocks priority sprint bandwidth.</textarea>
+</div>
+</div>
+</section>
+<!-- Autonomous Routines (Interactive Glass Toggles) -->
+<section class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-md shadow-[0_4px_24px_rgba(0,0,0,0.5)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[18px]">precision_manufacturing</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg font-bold text-on-surface">Autonomous Routines</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zero-touch workflow automation</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary-container font-label-sm text-label-sm">Engine 2.4 Active</span>
+</div>
+<!-- Toggles List -->
+<div class="flex flex-col gap-space-sm" id="routines-list">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col pr-3">
+<span class="font-label-md text-body-md font-semibold text-on-surface">Auto-send invoice reminders</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Automated ping 3 days prior to due date</span>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-primary-container transition-colors duration-200 ease-in-out shadow-[0_0_10px_rgba(0,255,102,0.3)]" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow-md ring-0 transition duration-200 ease-in-out mt-0.5 ml-0.5"></span>
+</button>
+</div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col pr-3">
+<span class="font-label-md text-body-md font-semibold text-on-surface">Instant payment telemetry</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Push notifications to Slack &amp; SMS Webhooks</span>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-primary-container transition-colors duration-200 ease-in-out shadow-[0_0_10px_rgba(0,255,102,0.3)]" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow-md ring-0 transition duration-200 ease-in-out mt-0.5 ml-0.5"></span>
+</button>
+</div>
+<!-- Toggle 3 -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col pr-3">
+<span class="font-label-md text-body-md font-semibold text-on-surface">Bank feed auto-reconcile</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Realtime sync with Stripe, Wise, and Mercury</span>
+</div>
+<button aria-checked="true" class="toggle-btn relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-primary-container transition-colors duration-200 ease-in-out shadow-[0_0_10px_rgba(0,255,102,0.3)]" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-surface-container-lowest shadow-md ring-0 transition duration-200 ease-in-out mt-0.5 ml-0.5"></span>
+</button>
+</div>
+<!-- Toggle 4 (Inactive) -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col pr-3">
+<span class="font-label-md text-body-md font-semibold text-on-surface">Client portal public reviews</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Collect and auto-publish verified testimonials</span>
+</div>
+<button aria-checked="false" class="toggle-btn relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full bg-surface-variant transition-colors duration-200 ease-in-out" role="switch" type="button">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-on-surface-variant shadow-md ring-0 transition duration-200 ease-in-out mt-0.5 ml-0.5"></span>
+</button>
+</div>
+</div>
+<!-- Execution Reliability Stat Micro-Telemetry -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high/60 backdrop-blur">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Execution Reliability</span>
+<span class="font-label-sm text-[11px] text-on-surface">1,429 events triggered • 0 failures</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-metric-numeral text-headline-md text-primary-container font-bold">99.8%</span>
+</div>
+</div>
+</section>
+<!-- Invoicing & Currency Schema -->
+<section class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-md shadow-[0_4px_24px_rgba(0,0,0,0.5)] flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[18px]">currency_exchange</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg font-bold text-on-surface">Invoicing &amp; Currency Schema</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Default billing calculation parameters</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Currency -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-md text-body-md font-medium text-on-surface">Base Currency</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Default for ledger and forecasts</span>
+</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high text-primary-container font-label-md text-label-md font-semibold">
+<span>USD ($)</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Payment Terms -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-md text-body-md font-medium text-on-surface">Standard Terms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Automatic invoice expiration</span>
+</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold">
+<span>Net 14 Days</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<!-- Default Tax -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-md text-body-md font-medium text-on-surface">Default Tax Rate</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Applied to eligible service lines</span>
+</div>
+<div class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold">
+<span>8.25%</span>
+<span class="material-symbols-outlined text-primary-container text-[16px]">edit</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Subscription Plan Card -->
+<section class="rounded-xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-md shadow-[0_4px_24px_rgba(0,0,0,0.5)] flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[20px]">diamond</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-body-lg font-bold text-on-surface">SoloCRM Pro Tier</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">$29.00 / month</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/20 text-primary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+        Active
+      </span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-body-md text-label-md text-on-surface-variant">Next billing auto-renews on Dec 24, 2025</span>
+<a class="font-label-md text-label-md text-primary-container hover:underline flex items-center gap-0.5" href="#">
+<span>Manage Stripe Billing</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</section>
+<!-- Bottom Commit & Save Sticky-feel Action Button -->
+<div class="pt-2">
+<button class="w-full py-3.5 px-4 rounded-xl bg-primary-container text-on-primary-container font-headline-md text-body-lg font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,255,102,0.4)] active:scale-[0.98] transition-all hover:bg-primary-fixed" id="commit-all-btn">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Commit &amp; Save All Changes</span>
+</button>
+</div>
+<!-- Toast Notification Feedback -->
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-surface-bright/95 text-on-surface text-label-md font-label-md shadow-[0_8px_32px_rgba(0,0,0,0.8)] flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 z-50" id="save-toast">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified</span>
+<span>Settings successfully encrypted &amp; synced</span>
+</div>
+</div>
+<script>
+  // Interactive Toggle Switch Handling
+  document.querySelectorAll('.toggle-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const isChecked = button.getAttribute('aria-checked') === 'true';
+      const thumb = button.querySelector('span');
+      
+      if (isChecked) {
+        button.setAttribute('aria-checked', 'false');
+        button.classList.remove('bg-primary-container', 'shadow-[0_0_10px_rgba(0,255,102,0.3)]');
+        button.classList.add('bg-surface-variant');
+        thumb.classList.remove('translate-x-5', 'bg-surface-container-lowest');
+        thumb.classList.add('translate-x-0', 'bg-on-surface-variant');
+      } else {
+        button.setAttribute('aria-checked', 'true');
+        button.classList.remove('bg-surface-variant');
+        button.classList.add('bg-primary-container', 'shadow-[0_0_10px_rgba(0,255,102,0.3)]');
+        thumb.classList.remove('translate-x-0', 'bg-on-surface-variant');
+        thumb.classList.add('translate-x-5', 'bg-surface-container-lowest');
+      }
+    });
+  });
+
+  // Save Toast Feedback Trigger
+  function showSavedToast() {
+    const toast = document.getElementById('save-toast');
+    if (!toast) return;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2400);
+  }
+
+  const quickSave = document.getElementById('quick-save-btn');
+  const commitAll = document.getElementById('commit-all-btn');
+  if (quickSave) quickSave.addEventListener('click', showSavedToast);
+  if (commitAll) commitAll.addEventListener('click', showSavedToast);
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.6)]" data-active-classes="text-primary-container drop-shadow-[0_0_8px_rgba(0,255,102,0.6)] font-bold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1 text-on-surface-variant transition-all hover:text-on-surface" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-label-sm text-[10px] mt-0.5 tracking-tight">Overview</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1 text-on-surface-variant transition-all hover:text-on-surface" data-path="leads" href="#"><span class="material-symbols-outlined text-[22px]">view_kanban</span><span class="font-label-sm text-[10px] mt-0.5 tracking-tight">Leads</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1 text-on-surface-variant transition-all hover:text-on-surface" data-path="insights" href="#"><span class="material-symbols-outlined text-[22px]">query_stats</span><span class="font-label-sm text-[10px] mt-0.5 tracking-tight">Insights</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1 text-on-surface-variant transition-all hover:text-on-surface" data-path="payments" href="#"><span class="material-symbols-outlined text-[22px]">account_balance_wallet</span><span class="font-label-sm text-[10px] mt-0.5 tracking-tight">Payments</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 py-1 transition-all text-primary-container drop-shadow-[0_0_8px_rgba(0,255,102,0.6)] font-bold" data-path="settings" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-sm text-[10px] mt-0.5 tracking-tight">Settings</span></a></div></nav></body></html>
