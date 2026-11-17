@@ -3,8 +3,8 @@ import { AppShell } from "@/components/layout/AppShell";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SoloCRM | Matte Obsidian Executive OS",
-  description: "Executive freelancer dashboard & financial telemetry crafted in precision matte obsidian and laser crimson",
+  title: "SoloCRM | Frosted Glass Executive OS",
+  description: "Executive freelancer dashboard & financial telemetry crafted in premium frosted glass and violet ambient glow",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased bg-[#080808] text-[#cdcbca] min-h-screen relative overflow-x-hidden selection:bg-[#d41514] selection:text-white">
+      <body className="font-sans antialiased bg-gradient-to-br from-[#120B18] via-[#09050F] to-[#1C0D22] text-[#E2DCE7] min-h-screen relative overflow-x-hidden selection:bg-[#E8B4F8] selection:text-[#120B18]">
         {/* Global AppShell with Persistent Sidebar & Transitions */}
         <AppShell>{children}</AppShell>
       </body>

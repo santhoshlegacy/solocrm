@@ -35,7 +35,7 @@ export interface GlassCardProps extends HTMLMotionProps<"div"> {
   withSpecularRim?: boolean;
   interactive?: boolean;
   withGlow?: boolean;
-  glowColor?: "crimson" | "laser" | "red" | "tomato" | "sage" | "amber" | string;
+  glowColor?: "crimson" | "laser" | "red" | "pink" | "purple" | string;
 }
 
 export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
@@ -46,7 +46,6 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
       withSpecularRim = true,
       interactive = true,
       withGlow = false,
-      glowColor = "crimson",
       variants,
       ...motionProps
     },
@@ -57,20 +56,20 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
         ref={ref}
         variants={variants || cardEntranceVariants}
         className={cn(
-          // Luxury Milled Obsidian Hardware Finish:
-          // 1. Base: Deep rich slate-obsidian surface
-          "relative overflow-hidden rounded-lg bg-[#0e0e11]",
-          // 2. Micro-hairline border
+          // Premium Frosted Glass Fintech:
+          // 1. Base: Translucent surface with heavy backdrop blur and soft rounded-2xl corners
+          "relative overflow-hidden rounded-2xl bg-white/[0.04] backdrop-blur-xl",
+          // 2. Translucent white border with subtle ambient glow if enabled
           withGlow
-            ? "border border-[#d41514]/40"
-            : "border border-white/[0.07]",
-          // 3. Precision top specular rim & ambient grounding depth
+            ? "border border-[#E8B4F8]/40 shadow-[0_0_30px_rgba(232,180,248,0.18)]"
+            : "border border-white/10",
+          // 3. Precision top specular rim & ambient drop shadow
           withSpecularRim
-            ? "shadow-luxury"
-            : "shadow-subtle",
+            ? "shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+            : "drop-shadow-2xl",
           // 4. Subtle, tactile interactive lift & edge illumination
           interactive &&
-            "hover:border-white/[0.14] hover:shadow-luxury-elevated hover:-translate-y-[1px] transition-all duration-200 group cursor-default",
+            "hover:border-white/20 hover:bg-white/[0.06] hover:shadow-[0_25px_60px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:-translate-y-[1px] transition-all duration-200 group cursor-default",
           className
         )}
         {...motionProps}

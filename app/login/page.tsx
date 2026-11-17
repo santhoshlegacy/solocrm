@@ -1,151 +1,72 @@
-"use client";
+'use client';
 
-import React, { useActionState, Suspense } from "react";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { loginAction, AuthState } from "@/actions/auth";
-import { Lock, Mail, ArrowRight, AlertCircle, Shield } from "lucide-react";
+import React, { useState } from 'react';
+import { createClient } from '@/utils/supabase/client';
 
-function LoginForm() {
-  const searchParams = useSearchParams();
-  const returnTo = searchParams.get("returnTo") || "/";
+export default function LoginPage() {
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [state, formAction, isPending] = useActionState<AuthState, FormData>(
-    loginAction,
-    {}
-  );
+  const handleGoogleSignIn = async () => {
+    setIsLoading(true);
+    const supabase = createClient();
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
+  };
 
   return (
     <div className="w-full">
       {/* Brand Header */}
       <div className="flex flex-col items-center text-center mb-6">
         <div className="flex items-center gap-2 mb-2">
-          <span className="h-2 w-2 rounded-full bg-[#d41514]" />
+          <span className="h-2 w-2 rounded-full bg-[#E8B4F8] shadow-[0_0_10px_#E8B4F8]" />
           <span className="font-display text-lg font-bold tracking-tight text-white">
-            Solo<span className="text-[#d41514]">CRM</span>
+            Solo<span className="text-[#E8B4F8]">CRM</span>
           </span>
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1a1a1a] text-[#888] border border-[#262626]">
+          <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/[0.04] text-[#A098A8] border border-white/10">
             v2.4 SECURE
           </span>
         </div>
-        <p className="text-[10px] font-mono uppercase tracking-[0.14em] text-[#71717a]">
+        <p className="text-[10px] font-mono uppercase tracking-[0.14em] text-[#A098A8]">
           Executive Operator Authentication
         </p>
       </div>
 
-      {/* Brutalist Container */}
-      <div className="rounded-md bg-[#111111] border border-[#222] p-8">
-        <div className="flex items-center justify-between pb-4 mb-5 border-b border-[#222]">
-          <div>
-            <h1 className="text-sm font-semibold text-white tracking-tight">
-              Sign In to Terminal
-            </h1>
-            <p className="text-[11px] text-[#71717a] mt-0.5">
-              Enter your cryptographically verified operator credentials
-            </p>
-          </div>
-          <div className="h-7 w-7 rounded bg-[#160b0b] border border-[#d41514]/30 flex items-center justify-center text-[#d41514]">
-            <Shield className="h-3.5 w-3.5" />
-          </div>
+      {/* Frosted Glass Auth Card */}
+      <div className="rounded-3xl bg-white/[0.04] backdrop-blur-2xl border border-white/10 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+        <div className="mb-6 text-center">
+          <h1 className="text-base font-semibold text-white tracking-tight">
+            Sign In to Terminal
+          </h1>
+          <p className="text-xs text-[#A098A8] mt-1 font-mono">
+            Single-sign on authentication via Google Workspace
+          </p>
         </div>
 
-        {/* Error Alert */}
-        {state?.error && (
-          <div className="mb-4 rounded-md border border-[#d41514]/30 bg-[#180d0d] p-3 text-xs text-[#d41514] flex items-start gap-2.5">
-            <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
-            <span className="font-mono text-[11px] leading-relaxed">
-              {state.error}
-            </span>
-          </div>
-        )}
-
-        <form action={formAction} className="flex flex-col gap-4">
-          <input type="hidden" name="returnTo" value={returnTo} />
-
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="email"
-              className="text-[10px] font-mono uppercase tracking-[0.14em] text-[#71717a]"
-            >
-              Operator Email
-            </label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#555]" />
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                autoComplete="email"
-                placeholder="operator@solocrm.design"
-                className="w-full rounded-md bg-[#0a0a0a] border border-[#222] pl-9 pr-3 py-2.5 text-xs text-white placeholder-[#555] focus:outline-none focus:border-[#d41514] transition-colors"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-center justify-between">
-              <label
-                htmlFor="password"
-                className="text-[10px] font-mono uppercase tracking-[0.14em] text-[#71717a]"
-              >
-                Security Passkey
-              </label>
-            </div>
-            <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-[#555]" />
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                autoComplete="current-password"
-                placeholder="••••••••••••"
-                className="w-full rounded-md bg-[#0a0a0a] border border-[#222] pl-9 pr-3 py-2.5 text-xs text-white placeholder-[#555] focus:outline-none focus:border-[#d41514] transition-colors"
-              />
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            disabled={isPending}
-            className="w-full mt-2 rounded-md bg-[#d41514] hover:bg-[#b5100f] text-white text-xs font-semibold py-2.5 transition-colors flex items-center justify-center gap-1.5 disabled:opacity-50 active:scale-[0.99]"
+        {/* Single Massive Google OAuth Button */}
+        <button
+          type="button"
+          onClick={handleGoogleSignIn}
+          disabled={isLoading}
+          className="w-full py-3.5 px-4 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#E8B4F8]/40 text-white hover:text-[#E8B4F8] text-xs font-semibold font-mono tracking-wider uppercase transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-50 active:scale-[0.99] group shadow-lg cursor-pointer"
+        >
+          <svg
+            className="h-4 w-4 fill-current transition-transform duration-200 group-hover:scale-110"
+            viewBox="0 0 24 24"
           >
-            <span>{isPending ? "Verifying Credentials..." : "Authenticate Session"}</span>
-            <ArrowRight className="h-3.5 w-3.5 stroke-[2.5]" />
-          </button>
-        </form>
-
-        <div className="mt-5 pt-4 border-t border-[#222] flex items-center justify-between text-[11px]">
-          <span className="text-[#666]">New operator?</span>
-          <Link
-            href="/signup"
-            className="text-[#d41514] hover:underline font-mono text-[11px]"
-          >
-            Provision Key →
-          </Link>
-        </div>
-      </div>
-
-      <div className="mt-4 text-center">
-        <p className="text-[10px] font-mono text-[#555]">
-          Strict IP rate limiting enforced • 5 attempts / 15 minutes
-        </p>
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+          </svg>
+          <span>
+            {isLoading ? 'Connecting to Google...' : 'Continue with Google'}
+          </span>
+        </button>
       </div>
     </div>
-  );
-}
-
-export default function LoginPage() {
-  return (
-    <Suspense
-      fallback={
-        <div className="rounded-md bg-[#111111] border border-[#222] p-8 text-center text-xs text-[#666]">
-          Loading authentication gateway...
-        </div>
-      }
-    >
-      <LoginForm />
-    </Suspense>
   );
 }

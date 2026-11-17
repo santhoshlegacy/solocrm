@@ -10,67 +10,99 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
+import { BarChart3 } from "lucide-react";
 
-export const MONTHLY_INSIGHTS = [
-  { month: "Nov", revenue: 11200, expenses: 1800 },
-  { month: "Dec", revenue: 12500, expenses: 2100 },
-  { month: "Jan", revenue: 10800, expenses: 1600 },
-  { month: "Feb", revenue: 13200, expenses: 1950 },
-  { month: "Mar", revenue: 14800, expenses: 2200 },
-  { month: "Apr", revenue: 13900, expenses: 1900 },
-  { month: "May", revenue: 16200, expenses: 2400 },
-  { month: "Jun", revenue: 17500, expenses: 2500 },
-  { month: "Jul", revenue: 19800, expenses: 2800 },
-  { month: "Aug", revenue: 21400, expenses: 3100 },
-  { month: "Sep", revenue: 23100, expenses: 3200 },
-  { month: "Oct", revenue: 25400, expenses: 3400 },
-];
+export interface MonthlyInsight {
+  month: string;
+  revenue: number;
+  billed?: number;
+  expenses?: number;
+}
 
-export const InsightsBarChart: React.FC = () => {
+export const InsightsBarChart: React.FC<{ data?: MonthlyInsight[] }> = ({ data = [] }) => {
+  const hasData =
+    data.length > 0 &&
+    data.some(
+      (d) =>
+        (d.revenue && d.revenue > 0) ||
+        (d.billed && d.billed > 0) ||
+        (d.expenses && d.expenses > 0)
+    );
+
+  if (!hasData) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full w-full rounded-2xl border border-dashed border-white/10 bg-white/[0.02] text-center p-6">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] border border-white/10 text-[#E8B4F8] mb-2">
+          <BarChart3 className="h-5 w-5" />
+        </div>
+        <h4 className="font-display text-xs font-semibold text-white tracking-tight mb-0.5">
+          Zero Capital Inflow Telemetry
+        </h4>
+        <p className="text-[11px] text-[#A098A8] font-normal">
+          No billed or settled invoice capital recorded in the selected accounting cycle.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="h-72 w-full">
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={MONTHLY_INSIGHTS} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.04)" vertical={false} />
+        <BarChart data={data} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255, 255, 255, 0.05)" vertical={false} />
           <XAxis
             dataKey="month"
-            stroke="#52525b"
+            stroke="#888191"
             fontSize={11}
             fontFamily="'JetBrains Mono', monospace"
             tickLine={false}
             axisLine={false}
           />
           <YAxis
-            stroke="#52525b"
+            stroke="#888191"
             fontSize={11}
             fontFamily="'JetBrains Mono', monospace"
             tickLine={false}
             axisLine={false}
-            tickFormatter={(val) => `$${val / 1000}k`}
+            tickFormatter={(val) => {
+              const n = Number(val);
+              if (!Number.isFinite(n)) return "₹0";
+              return `₹${n >= 1000 ? `${Math.round(n / 1000)}k` : n}`;
+            }}
           />
           <Tooltip
+            formatter={(value: any, name: any) => [
+              `₹${Number(value).toLocaleString("en-IN")}`,
+              name === "revenue" ? "Settled" : name === "billed" ? "Billed" : name,
+            ]}
             contentStyle={{
-              backgroundColor: "#121215",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              borderRadius: "8px",
-              boxShadow: "0 12px 30px rgba(0, 0, 0, 0.8)",
-              color: "#ffffff",
+              backgroundColor: "rgba(20, 13, 27, 0.95)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              borderRadius: "16px",
+              boxShadow: "0 20px 50px rgba(0, 0, 0, 0.6)",
+              color: "#E2DCE7",
               fontSize: "12px",
               fontFamily: "'JetBrains Mono', monospace",
             }}
           />
           <Bar
             dataKey="revenue"
-            fill="#d41514"
-            radius={[3, 3, 0, 0]}
+            name="Settled"
+            fill="#E8B4F8"
+            radius={[6, 6, 0, 0]}
           />
           <Bar
-            dataKey="expenses"
-            fill="#27272a"
-            radius={[3, 3, 0, 0]}
+            dataKey="billed"
+            name="Billed"
+            fill="rgba(255, 255, 255, 0.15)"
+            radius={[6, 6, 0, 0]}
           />
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
 };
+
+export default InsightsBarChart;

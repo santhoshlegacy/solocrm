@@ -3,7 +3,11 @@
 import dynamic from "next/dynamic";
 import React from "react";
 
-const RevenueChart = dynamic(
+const RevenueChart = dynamic<{
+  sales?: any[];
+  leads?: any[];
+  mode?: "freelancer" | "business";
+}>(
   () => import("./RevenueChart").then((mod) => ({ default: mod.RevenueChart })),
   {
     ssr: false,

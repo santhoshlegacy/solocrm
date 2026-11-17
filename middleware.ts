@@ -8,12 +8,12 @@ function applySecurityHeaders(res: NextResponse): NextResponse {
     "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com data:",
-    "img-src 'self' data: blob: https://images.unsplash.com https://*.supabase.co",
-    "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://fonts.googleapis.com https://fonts.gstatic.com",
+    "img-src 'self' data: blob: https://images.unsplash.com https://*.supabase.co https://lh3.googleusercontent.com",
+    "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://fonts.googleapis.com https://fonts.gstatic.com https://accounts.google.com",
     "frame-ancestors 'none'",
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self'",
+    "form-action 'self' https://*.supabase.co https://accounts.google.com",
   ].join("; ");
 
   res.headers.set("Content-Security-Policy", cspHeader);
@@ -66,18 +66,23 @@ export async function middleware(request: NextRequest) {
   }
 
   const { pathname } = request.nextUrl;
+  const isPortalPage = pathname.startsWith("/portal");
+  const isAuthCallback = pathname.startsWith("/auth/callback");
   const isAuthPage =
     pathname.startsWith("/login") ||
-    pathname.startsWith("/signup") ||
-    pathname.startsWith("/auth");
+    pathname.startsWith("/signup");
+  const isOnboardingPage = pathname.startsWith("/onboarding");
 
-  // Route Protection:
-  // 1. Unauthenticated users trying to access protected routes redirect to /login
+  // 1. Public dynamic routes strictly bypassing standard auth interception
+  if (isPortalPage || isAuthCallback) {
+    return applySecurityHeaders(response);
+  }
+
+  // 2. Unauthenticated route protection
   if (!user && !isAuthPage) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = "/login";
-    // Preserve any return path in redirect if desired
-    if (pathname !== "/") {
+    if (pathname !== "/" && !isOnboardingPage) {
       redirectUrl.searchParams.set("returnTo", pathname);
     }
     const redirectResponse = NextResponse.redirect(redirectUrl);
@@ -87,16 +92,39 @@ export async function middleware(request: NextRequest) {
     return applySecurityHeaders(redirectResponse);
   }
 
-  // 2. Authenticated users visiting /login or /signup redirect to /
-  if (user && isAuthPage) {
-    const redirectUrl = request.nextUrl.clone();
-    redirectUrl.pathname = "/";
-    redirectUrl.search = "";
-    const redirectResponse = NextResponse.redirect(redirectUrl);
-    response.cookies.getAll().forEach((c) => {
-      redirectResponse.cookies.set(c.name, c.value);
-    });
-    return applySecurityHeaders(redirectResponse);
+  // 3. Authenticated session routing & forced onboarding
+  if (user) {
+    // Check if user has selected a workspace architecture
+    const workspaceType =
+      user.user_metadata?.workspace_type ||
+      request.cookies.get("solocrm_workspace_type")?.value;
+
+    // A. User has no workspace type selected -> Force redirect to /onboarding
+    if (!workspaceType) {
+      if (!isOnboardingPage) {
+        const redirectUrl = request.nextUrl.clone();
+        redirectUrl.pathname = "/onboarding";
+        redirectUrl.search = "";
+        const redirectResponse = NextResponse.redirect(redirectUrl);
+        response.cookies.getAll().forEach((c) => {
+          redirectResponse.cookies.set(c.name, c.value);
+        });
+        return applySecurityHeaders(redirectResponse);
+      }
+      return applySecurityHeaders(response);
+    }
+
+    // B. User has already onboarded but visits /login, /signup, or /onboarding -> Redirect to /
+    if (isAuthPage || isOnboardingPage) {
+      const redirectUrl = request.nextUrl.clone();
+      redirectUrl.pathname = "/";
+      redirectUrl.search = "";
+      const redirectResponse = NextResponse.redirect(redirectUrl);
+      response.cookies.getAll().forEach((c) => {
+        redirectResponse.cookies.set(c.name, c.value);
+      });
+      return applySecurityHeaders(redirectResponse);
+    }
   }
 
   return applySecurityHeaders(response);

@@ -8,23 +8,50 @@ interface WorkspaceContextType {
   currentMode: WorkspaceMode;
   setCurrentMode: (mode: WorkspaceMode) => void;
   isPending: boolean;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+  newActionTrigger: number;
+  triggerNewAction: () => void;
 }
 
 const WorkspaceContext = createContext<WorkspaceContextType>({
   currentMode: "freelancer",
   setCurrentMode: () => {},
   isPending: false,
+  searchQuery: "",
+  setSearchQuery: () => {},
+  newActionTrigger: 0,
+  triggerNewAction: () => {},
 });
 
 export const useWorkspaceMode = () => useContext(WorkspaceContext);
 
 export const WorkspaceModeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentMode, setMode] = useState<WorkspaceMode>("freelancer");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [newActionTrigger, setNewActionTrigger] = useState(0);
   const [isPending, startTransition] = useTransition();
 
-  // Load initial mode from localStorage if available
+  const triggerNewAction = () => {
+    setNewActionTrigger((prev) => prev + 1);
+  };
+
+  // Load initial mode from cookie or localStorage if available
   useEffect(() => {
     try {
+      // Check cookie first
+      const cookieMatch = document.cookie.match(/solocrm_workspace_type=([^;]+)/);
+      if (cookieMatch) {
+        const val = cookieMatch[1];
+        if (val === "business") {
+          setMode("business");
+          return;
+        } else if (val === "freelance") {
+          setMode("freelancer");
+          return;
+        }
+      }
+
       const saved = localStorage.getItem("solocrm_workspace_mode") as WorkspaceMode | null;
       if (saved === "freelancer" || saved === "business") {
         setMode(saved);
@@ -53,7 +80,17 @@ export const WorkspaceModeProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   return (
-    <WorkspaceContext.Provider value={{ currentMode, setCurrentMode, isPending }}>
+    <WorkspaceContext.Provider
+      value={{
+        currentMode,
+        setCurrentMode,
+        isPending,
+        searchQuery,
+        setSearchQuery,
+        newActionTrigger,
+        triggerNewAction,
+      }}
+    >
       {children}
     </WorkspaceContext.Provider>
   );
